@@ -334,6 +334,8 @@ function initProtectedLinks() {
       // Remove slashes for tel: link
       const cleanPhone = decoded.replace(/\//g, '');
       link.href = `tel:${cleanPhone}`;
+    } else if (type === 'instagram') {
+      link.href = decoded;
     }
   });
 }
