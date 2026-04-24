@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
   
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
@@ -24,7 +24,7 @@
   <!-- Navigation -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
-      <a href="index.html" class="logo">Velvet Fabrics</a>
+      <a href="index.html" class="logo"><img src="assets/img/V-logo-transparent.png" alt="V" class="logo-icon"> Velvet Fabrics</a>
       
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link">Početna</a></li>
@@ -59,12 +59,51 @@
       <div class="container">
         <div class="section-header animate-on-scroll">
           <h1 class="section-title">Deo naše kolekcije da Vam zagolicamo maštu</h1>
-          <p class="section-subtitle">Premijum materijali za izvanredne kreacije</p>
+          <p class="section-subtitle">
+            Premijum <a href="#materijali" class="section-link">materijali</a> za izvanredne kreacije.<br>
+            Pogledajte najčešća <a href="#faq" class="section-link">pitanja</a> o materijalima i veleprodaji.
+          </p>
+        </div>
+        
+        <!-- About Materials -->
+        <div class="materials-info animate-on-scroll">
+          <h2 class="materials-title">O našim materijalima</h2>
+          <p class="materials-intro">U ponudi firme Velvet Fabrics nalazi se pažljivo odabran asortiman pamučnih tkanina namenjenih proizvodnji odeće.</p>
+          
+          <div class="materials-grid">
+            <div class="materials-content">
+              <div class="materials-column">
+                <h3 class="materials-heading">Fokusirani smo na:</h3>
+                <ul class="materials-list">
+                  <li>100% pamuk različitih gramatura</li>
+                  <li>premium pamuk materijale (modal, pamuk sa likrom i slične kombinacije)</li>
+                  <li>tkanine za konfekciju i modne kolekcije</li>
+                  <li>materijale pogodne za serijsku proizvodnju</li>
+                </ul>
+              </div>
+              
+              <div class="materials-column">
+                <h3 class="materials-heading">Posebno izdvajamo:</h3>
+                <ul class="materials-list">
+                  <li>pamuk veće gramature (npr. 240g)</li>
+                  <li>materijale prijatne za nošenje i dugotrajne u upotrebi</li>
+                  <li>pouzdanu robu sa ujednačenim kvalitetom</li>
+                </ul>
+              </div>
+              
+              <p class="materials-footer">Sva roba je poreklom iz Turske i dolazi iz kontinuirane nabavke, što znači da kupci mogu da računaju na ponovljivost materijala i sigurnost u proizvodnji.</p>
+              <p class="materials-cta">Ako niste sigurni koji materijal vam je potreban, možete doći kod nas u Novi Sad i pogledati ponudu uživo – ili se konsultovati sa nama za konkretan predlog.</p>
+            </div>
+            
+            <div class="materials-image">
+              <img src="assets/img/slika16.jpg" alt="Belgian Linen Canvas" loading="lazy">
+            </div>
+          </div>
         </div>
         
         <!-- Product Grid - 4 columns on desktop, 1 on mobile -->
         <div class="product-grid">
-          <article class="product-card animate-on-scroll">
+          <article class="product-card animate-on-scroll" id="materijali">
             <div class="product-image">
               <img src="assets/img/slika5.jpg" alt="Merino Wool Blend" loading="lazy">
             </div>
@@ -147,6 +186,86 @@
       </div>
     </section>
     
+    <!-- FAQ Section -->
+    <section class="section">
+      <div class="container">
+        <div id="faq" class="faq-section animate-on-scroll">
+          <h2 class="section-title">Najčešća pitanja o materijalima i veleprodaji (FAQ)</h2>
+          <div class="faq-grid">
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Da li radite samo pamuk ili imate i druge materijale?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Fokusirani smo isključivo na pamuk i premium varijacije pamučnih materijala. Ne bavimo se sintetikom.</p>
+              </div>
+            </div>
+            
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Odakle dolazi vaša roba?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Sva roba je iz Turske, od proizvođača sa kojima imamo dugogodišnju saradnju.</p>
+              </div>
+            </div>
+            
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Da li mogu da pogledam tkanine uživo?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Da, nalazimo se u Novom Sadu i moguće je doći i pogledati materijale direktno u našem prostoru.</p>
+              </div>
+            </div>
+            
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Da li prodajete manje količine?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Primarno radimo veleprodaju, ali u zavisnosti od materijala i dostupnosti postoji mogućnost dogovora.</p>
+              </div>
+            </div>
+            
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Da li imate materijale veće gramature?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Da, u ponudi imamo i pamuk veće gramature, uključujući i 240g, koji je pogodan za kvalitetnije komade odeće.</p>
+              </div>
+            </div>
+            
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Da li imate stalnu ponudu ili se menja?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Imamo osnovne artikle koji su stalno dostupni, ali deo ponude se redovno menja u skladu sa nabavkom i potražnjom.</p>
+              </div>
+            </div>
+            
+            <div class="faq-card" data-faq>
+              <div class="faq-question">
+                <h3>Kako da znam koji materijal mi odgovara?</h3>
+                <span class="faq-icon"><i class="fas fa-plus"></i></span>
+              </div>
+              <div class="faq-answer">
+                <p>Možete se konsultovati sa nama – na osnovu vaše potrebe predložićemo odgovarajuće opcije.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- Custom Orders -->
     <section class="section section-dark">
       <div class="container">
@@ -175,16 +294,16 @@
             <li><a href="products.html">Proizvodi</a></li>
             <li><a href="about.html">O nama</a></li>
             <li><a href="contact.html">Kontakt</a></li>
-            <li><a href="https://instagram.com" target="blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h4 class="footer-title">Kontakt</h4>
           <ul class="footer-links">
-            <li>velvet.fabrics@gmail.com</li>
-            <li>065/123-456</li>
-            <li>Nova 78, br 2<br>Novi Sad<br>21000</li>
+            <li><a href="#" class="protected-link" data-type="email" data-encoded="dmVsdmV0LmZhYnJpY3NAZ21haWwuY29t">velvet.fabrics@gmail.com</a></li>
+            <li><a href="#" class="protected-link" data-type="phone" data-encoded="MDY1IDgzNSA4MzggMw==">065 835 838 3</a></li>
+            <li><a href="https://maps.google.com/?q=Nova+78+br+2+Novi+Sad+21000" target="_blank" rel="noopener">Nova 78, br 2<br>Novi Sad<br>21000</a></li>
           </ul>
         </div>
         
@@ -192,7 +311,7 @@
           <h4 class="footer-title">Radno vreme</h4>
           <ul class="footer-links">
             <li>Ponedeljak - Petak:</li>
-            <li><i class="far fa-clock"></i> 9:00-17:00 h</li>
+            <li><i class="far fa-clock"></i> 8:00-16:00 h</li>
           </ul>
         </div>
       </div>

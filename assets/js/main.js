@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollAnimations();
   initPageTransitions();
   initGoToTop();
+  initProtectedLinks();
+  initFAQ();
 });
 
 /* ============================================
@@ -192,42 +194,7 @@ function initPageTransitions() {
   });
 }
 
-/* ============================================
-   CONTACT FORM HANDLING
-   ============================================ */
 
-const contactForm = document.getElementById('contact-form');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    
-    // Simple validation
-    const name = data.name?.trim();
-    const email = data.email?.trim();
-    const message = data.message?.trim();
-    
-    if (!name || !email || !message) {
-      alert('Please fill in all fields.');
-      return;
-    }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert('Please enter a valid email address.');
-      return;
-    }
-    
-    // Success - form would be submitted to server in production
-    alert('Thank you for your message! We will get back to you soon.');
-    contactForm.reset();
-  });
-}
 
 /* ============================================
    BUTTON RIPPLE EFFECT
@@ -342,4 +309,55 @@ function throttle(func, limit) {
       setTimeout(() => inThrottle = false, limit);
     }
   };
+}
+
+/* ============================================
+   PROTECTED LINKS - Email/Phone Obfuscation
+   ============================================ */
+
+function initProtectedLinks() {
+  const protectedLinks = document.querySelectorAll('.protected-link');
+  
+  protectedLinks.forEach(link => {
+    const type = link.dataset.type;
+    const encoded = link.dataset.encoded;
+    
+    if (!type || !encoded) return;
+    
+    // Decode base64
+    const decoded = atob(encoded);
+    
+    // Set proper href based on type
+    if (type === 'email') {
+      link.href = `mailto:${decoded}`;
+    } else if (type === 'phone') {
+      // Remove slashes for tel: link
+      const cleanPhone = decoded.replace(/\//g, '');
+      link.href = `tel:${cleanPhone}`;
+    }
+  });
+}
+
+/* ============================================
+   FAQ ACCORDION
+   ============================================ */
+
+function initFAQ() {
+  const faqCards = document.querySelectorAll('[data-faq]');
+  
+  faqCards.forEach(card => {
+    const question = card.querySelector('.faq-question');
+    
+    question.addEventListener('click', () => {
+      // Close all other cards
+      faqCards.forEach(otherCard => {
+        if (otherCard !== card) {
+          otherCard.classList.remove('active');
+        }
+      });
+      
+      // Toggle current card
+      card.classList.toggle('active');
+    });
+  });
 }
