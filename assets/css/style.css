@@ -87,7 +87,6 @@ body {
   color: var(--text);
   background-color: var(--bg);
   overflow-x: hidden;
-  touch-action: manipulation;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -133,12 +132,10 @@ img {
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--backdrop-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid var(--backdrop-border);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  transition: padding 0.3s ease, transform var(--transition-base), background 0.3s ease, border-bottom 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.5rem 0;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .navbar.hidden {
@@ -164,14 +161,12 @@ img {
 
 .navbar.compact .logo {
   font-size: 0.95rem;
-  transition: font-size 0.3s ease;
   white-space: nowrap;
 }
 
 .navbar.compact .nav-link {
   font-size: 0.875rem;
   letter-spacing: 0.05em;
-  transition: font-size 0.3s ease, letter-spacing 0.3s ease;
   white-space: nowrap;
 }
 
@@ -185,7 +180,6 @@ img {
   font-size: 1.75rem;
   color: var(--black);
   font-weight: 400;
-  transition: font-size 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -205,17 +199,19 @@ img {
   color: var(--black);
   position: relative;
   padding: var(--space-xs) 0;
-  transition: font-size 0.3s ease;
 }
 
 .navbar-container {
-  max-width: 1400px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: var(--space-sm) var(--space-lg);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 50px;
+  background: var(--backdrop-compact);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  flex-wrap: nowrap;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: max-width 0.3s ease, padding 0.3s ease, border-radius 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .nav-links {

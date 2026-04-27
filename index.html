@@ -2,10 +2,29 @@
 <html lang="sr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Velvet Fabrics | Artisanal Fabrics & Luxury Textiles</title>
-  <meta name="description" content="Premium artisanal textiles for apparel makers and luxury designers. Discover handcrafted fabrics with heritage quality.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Fabrics | Veleprodaja premijum pamučnih materijala</title>
   
+  <!-- Meta tags SEO -->
+  <meta name="description" content="Veleprodaja premijum pamučnih materijala iz uvoza iz Turske. Velvet Fabrics Novi Sad – kvalitetni materijali za proizvođače odeće u Srbiji.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Velvet Fabrics">
+  <meta name="geo.region" content="RS-VO">
+  <meta name="geo.placename" content="Novi Sad">
+  <meta name="geo.position" content="45.2671;19.8335">
+  <meta name="ICBM" content="45.2671, 19.8335">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Velvet Fabrics – Veleprodaja pamučnih materijala">
+  <meta property="og:description" content="Premijum pamuk i pamučni materijali iz Turske za proizvođače odeće.">
+  <meta property="og:url" content="https://velvetfabrics.rs">
+  <meta property="og:image" content="https://velvetfabrics.rs/assets/img/og-image.jpg">
+  <meta property="og:locale" content="sr_RS">
+
+  <link rel="alternate" hreflang="sr-RS" href="https://velvetfabrics.rs">
+  <link rel="alternate" hreflang="x-default" href="https://velvetfabrics.rs">
+  <link rel="canonical" href="https://velvetfabrics.rs">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,22 +34,74 @@
   <link rel="stylesheet" href="assets/css/style.css">
   
   <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/img/V-logo-48px.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WholesaleStore",
+    "name": "Velvet Fabrics",
+    "description": "Veleprodaja premium pamučnih materijala iz uvoza iz Turske za tržište Srbije",
+    "url": "https://velvetfabrics.rs",
+    "email": "velvetfabrics.rs@gmail.com",
+    "telephone": "+381 65 835 838 3",
+    "sameAs": [
+      "https://instagram.com/fabrika_tekstila"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Nova 78, br 2",
+      "addressLocality": "Novi Sad",
+      "postalCode": "21000",
+      "addressCountry": "RS"
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Serbia"
+    },
+    "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday","Tuesday","Wednesday","Thursday","Friday"
+    ],
+    "opens": "08:00",
+    "closes": "16:00"
+    }
+  }
+  </script>
+  
+  <!-- Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Početna",
+        "item": "https://velvetfabrics.rs/index.html"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Skip to Content -->
   <a href="#main" class="skip-link">Skip to main content</a>
   
   <!-- Navigation -->
-  <nav class="navbar" role="navigation" aria-label="Main navigation">
+  <nav class="navbar compact" role="navigation" aria-label="Main navigation">
     <div class="navbar-container">
       <a href="index.html" class="logo"><img src="assets/img/V-logo-transparent.png" alt="V" class="logo-icon"> Velvet Fabrics</a>
       
       <ul class="nav-links">
         <li><a href="index.html" class="nav-link active">Početna</a></li>
-        <li><a href="products.html" class="nav-link">Proizvodi</a></li>
-        <li><a href="about.html" class="nav-link">O nama</a></li>
-        <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+        <li><a href="proizvodi/" class="nav-link">Proizvodi</a></li>
+        <li><a href="o-nama/" class="nav-link">O nama</a></li>
+        <li><a href="kontakt/" class="nav-link">Kontakt</a></li>
       </ul>
       
       <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -45,9 +116,9 @@
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
     <ul class="nav-links">
       <li><a href="index.html" class="nav-link">Početna</a></li>
-      <li><a href="products.html" class="nav-link">Proizvodi</a></li>
-      <li><a href="about.html" class="nav-link">O nama</a></li>
-      <li><a href="contact.html" class="nav-link">Kontakt</a></li>
+      <li><a href="proizvodi/" class="nav-link">Proizvodi</a></li>
+      <li><a href="o-nama/" class="nav-link">O nama</a></li>
+      <li><a href="kontakt/" class="nav-link">Kontakt</a></li>
     </ul>
   </div>
   <div class="menu-overlay" aria-hidden="true"></div>
@@ -118,7 +189,7 @@
         </div>
         
         <div class="text-center mt-lg animate-on-scroll">
-          <a href="products.html" class="btn btn-textile">Detaljnije o proizvodima</a>
+          <a href="proizvodi/" class="btn btn-textile">Detaljnije o proizvodima</a>
         </div>
       </div>
     </section>
@@ -133,7 +204,7 @@
           <div class="featured-content animate-on-scroll">
             <h3>Stvoreno iz ljubavi prema tekstilu</h3>
             <p>Više od decenije bavimo se uvozom i veleprodajom kvalitetnih tekstila za proizvođače odeće i modne brendove. Gradimo dugoročne odnose sa partnerima koji znaju da prepoznaju kvalitetan materijal. Svaka tkanina u našoj ponudi dolazi iz proverenih izvora i iza nje stoje pouzdan kvalitet i iskustvo.</p>
-            <a href="about.html" class="btn btn-outline">Detaljnije o nama</a>
+            <a href="o-nama/" class="btn btn-outline">Detaljnije o nama</a>
           </div>
         </div>
       </div>
@@ -144,7 +215,7 @@
       <div class="container text-center animate-on-scroll">
         <h2 class="section-title">Započnite svoj sledeći projekat</h2>
         <p class="section-subtitle" style="max-width: 500px; margin: 0 auto var(--space-lg);">Naš tim će Vam pomoći da pronađete tkaninu koja najbolje odgovara vašim željama i zahtevima.</p>
-        <a href="contact.html" class="btn btn-textile">Posetite nas!</a>
+        <a href="kontakt/" class="btn btn-textile">Posetite nas!</a>
       </div>
     </section>
   </main>
@@ -162,9 +233,9 @@
           <h4 class="footer-title">Linkovi</h4>
           <ul class="footer-links">
             <li><a href="index.html">Početna</a></li>
-            <li><a href="products.html">Proizvodi</a></li>
-            <li><a href="about.html">O nama</a></li>
-            <li><a href="contact.html">Kontakt</a></li>
+            <li><a href="proizvodi/">Proizvodi</a></li>
+            <li><a href="o-nama/">O nama</a></li>
+            <li><a href="kontakt/">Kontakt</a></li>
             <li><a href="#" class="protected-link" data-type="instagram" data-encoded="aHR0cHM6Ly93d3cuaW5zdGFncmFtLmNvbS9mYWJyaWthX3Rla3N0aWxhLw==" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
           </ul>
         </div>

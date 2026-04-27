@@ -24,40 +24,11 @@ function initNavigation() {
   const mobileMenu = document.querySelector('.mobile-menu');
   const menuOverlay = document.querySelector('.menu-overlay');
   
-  let lastScrollY = window.scrollY;
-  let ticking = false;
-  
-  // Scroll hide/show behavior
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        handleScroll();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-  
-  function handleScroll() {
-    const currentScrollY = window.scrollY;
-    
-    // Remove compact class if at top of page
-    if (currentScrollY < 100) {
-      navbar.classList.remove('compact');
-      lastScrollY = currentScrollY;
-      return;
-    }
-    
-    // Add compact when scrolling down, remove when scrolling up
-    if (currentScrollY > lastScrollY && currentScrollY > 100) {
-      // Scrolling down - make navbar smaller
-      navbar.classList.add('compact');
-    } else {
-      // Scrolling up - restore full size
-      navbar.classList.remove('compact');
-    }
-    
-    lastScrollY = currentScrollY;
+  // Always add compact class for pill nav immediately (no animation)
+  if (navbar) {
+    navbar.classList.add('compact');
+    // Force reflow to ensure class is applied before any transitions
+    void navbar.offsetHeight;
   }
   
   // Mobile menu toggle
@@ -89,17 +60,25 @@ function initNavigation() {
     mobileMenu.classList.remove('active');
     menuOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    
+    // Update ARIA attributes
+    hamburger.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-hidden', 'true');
   }
   
   // Set active nav link based on current page
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const pathSegments = window.location.pathname.split('/').filter(Boolean);
+  const currentPage = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : 'index.html';
   const navLinks = document.querySelectorAll('.nav-link');
   
   navLinks.forEach(link => {
     const href = link.getAttribute('href');
+    // Handle subdirectory structure
     if (href === currentPage || 
         (currentPage === '' && href === 'index.html') ||
-        (currentPage === 'index.html' && href === 'index.html')) {
+        (currentPage === 'index.html' && href === 'index.html') ||
+        (currentPage === 'index.html' && href === '../index.html') ||
+        (pathSegments.length === 1 && href === '../index.html')) {
       link.classList.add('active');
     }
   });
@@ -170,11 +149,11 @@ function initScrollAnimations() {
    ============================================ */
 
 function initPageTransitions() {
-  // Add page-enter animation class to main content
-  const main = document.querySelector('main') || document.querySelector('.page-content');
-  if (main) {
-    main.classList.add('page-transition');
-  }
+  // Skip page transition animation to prevent navbar zoom effect
+  // const main = document.querySelector('main') || document.querySelector('.page-content');
+  // if (main) {
+  //   main.classList.add('page-transition');
+  // }
   
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
