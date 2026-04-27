@@ -610,6 +610,7 @@ img {
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
   text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  font-weight: 500;
 }
 
 .hero-subtitle {
@@ -671,6 +672,7 @@ img {
 
 .section-title {
   margin-bottom: var(--space-sm);
+  scroll-margin-top: 100px;
 }
 
 .section-subtitle {
