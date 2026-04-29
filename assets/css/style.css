@@ -705,7 +705,7 @@ img {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
 }
 
@@ -715,6 +715,8 @@ img {
   overflow: hidden;
   box-shadow: var(--shadow-sm);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  display: flex;
+  flex-direction: row;
 }
 
 .product-card:hover {
@@ -724,7 +726,8 @@ img {
 
 .product-image {
   position: relative;
-  aspect-ratio: 3/4;
+  width: 40%;
+  min-width: 200px;
   overflow: hidden;
   background: var(--dry-sage-2);
 }
@@ -1359,6 +1362,16 @@ img {
 @media (max-width: 1024px) {
   .product-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .product-card {
+    flex-direction: column;
+  }
+  
+  .product-image {
+    width: 100%;
+    min-width: auto;
+    aspect-ratio: 3/4;
   }
   
   .contact-grid {
