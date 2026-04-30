@@ -620,8 +620,8 @@ img {
   transform: translateY(30px);
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-  font-weight: 500;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .hero-subtitle {
