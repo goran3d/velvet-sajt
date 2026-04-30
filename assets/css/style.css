@@ -695,6 +695,32 @@ img {
   line-height: 1.6;
 }
 
+.section-subtitle-list {
+  display: inline-block;
+  text-align: left;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: var(--dry-sage-2);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.section-subtitle-list li {
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.35rem;
+}
+
+.section-subtitle-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--olive-leaf);
+  font-size: 1rem;
+  line-height: inherit;
+}
+
 .section-link {
   color: var(--olive-leaf);
   text-decoration: none;
