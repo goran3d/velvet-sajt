@@ -619,7 +619,6 @@ img {
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
   letter-spacing: 0.02em;
-  min-height: 1.2em;
 }
 
 .hero-subtitle {
@@ -642,15 +641,10 @@ img {
   animation-delay: 0.7s;
 }
 
-@media (max-width: 768px) {
-  .hero-cta {
-    min-width: fit-content;
-  }
-}
-
 @keyframes fadeInUp {
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1451,7 +1445,7 @@ img {
   }
   
   .hero-content {
-    padding: var(--space-lg);
+    padding: var(--space-lg) var(--space-sm);
   }
   
   .product-grid {
@@ -1528,8 +1522,13 @@ img {
   h1 { font-size: 2.5rem; }
   h2 { font-size: 2rem; }
   
-  .btn {
-    width: 100%;
+  .hero-content {
+    padding: var(--space-md) var(--space-xs);
+  }
+  
+  .hero-subtitle {
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.1em;
   }
 }
 
