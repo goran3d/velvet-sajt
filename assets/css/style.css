@@ -619,6 +619,7 @@ img {
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
   letter-spacing: 0.02em;
+  min-height: 1.2em;
 }
 
 .hero-subtitle {
@@ -639,6 +640,12 @@ img {
   opacity: 0;
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.7s;
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    min-width: fit-content;
+  }
 }
 
 @keyframes fadeInUp {
@@ -1045,6 +1052,12 @@ img {
   padding: var(--space-xl);
   border-radius: 12px;
   margin-bottom: var(--space-xl);
+}
+
+@media (max-width: 768px) {
+  .materials-info {
+    padding: var(--space-md);
+  }
 }
 
 .materials-title {
