@@ -351,6 +351,7 @@ function initFAQ() {
 function initTypewriter() {
   const typewriterElement = document.querySelector('.typewriter');
   const cursorElement = document.querySelector('.cursor');
+  const subtitleElement = document.querySelector('.subtitle-animate');
   
   if (!typewriterElement || !cursorElement) return;
   
@@ -368,6 +369,13 @@ function initTypewriter() {
     } else {
       // Hide cursor when typing is complete
       cursorElement.classList.add('hidden');
+      
+      // Trigger subtitle animation after 100ms delay
+      if (subtitleElement) {
+        setTimeout(() => {
+          subtitleElement.classList.add('active');
+        }, 100);
+      }
     }
   }
   
