@@ -1368,16 +1368,6 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .product-card {
-    flex-direction: column;
-  }
-  
-  .product-image {
-    width: 100%;
-    min-width: auto;
-    aspect-ratio: 3/4;
-  }
-  
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -1434,7 +1424,7 @@ img {
   }
   
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-sm);
   }
   
