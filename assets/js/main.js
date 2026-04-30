@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProtectedLinks();
   initFAQ();
   initTypewriter();
+  initLightbox();
 });
 
 /* ============================================
@@ -381,4 +382,70 @@ function initTypewriter() {
   
   // Start typing after a short delay
   setTimeout(typeCharacter, 500);
+}
+
+/* ============================================
+   PRODUCT IMAGE LIGHTBOX
+   ============================================ */
+
+function initLightbox() {
+  const productImages = document.querySelectorAll('.product-image');
+  if (productImages.length === 0) return;
+
+  // Build overlay once
+  const overlay = document.createElement('div');
+  overlay.className = 'lightbox-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.setAttribute('aria-label', 'Image preview');
+
+  const img = document.createElement('img');
+  img.className = 'lightbox-img';
+  img.alt = '';
+
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'lightbox-close';
+  closeBtn.innerHTML = '&times;';
+  closeBtn.setAttribute('aria-label', 'Close image');
+
+  overlay.appendChild(img);
+  overlay.appendChild(closeBtn);
+  document.body.appendChild(overlay);
+
+  function openLightbox(src, alt) {
+    img.src = src;
+    img.alt = alt || '';
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+
+  function closeLightbox() {
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Open on product image click
+  productImages.forEach(function(container) {
+    const image = container.querySelector('img');
+    if (!image) return;
+    container.addEventListener('click', function() {
+      openLightbox(image.src, image.alt);
+    });
+  });
+
+  // Close on overlay background click
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  // Close on button click
+  closeBtn.addEventListener('click', closeLightbox);
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && overlay.classList.contains('active')) {
+      closeLightbox();
+    }
+  });
 }
