@@ -88,6 +88,11 @@ body {
   color: var(--text);
   background-color: var(--bg);
   overflow-x: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: url('../img/cursor/scissors.svg') 12 12, auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -726,10 +731,10 @@ img {
   flex-direction: row;
 }
 
-.product-card:hover {
+/* .product-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
-}
+} */
 
 .product-image {
   position: relative;
@@ -746,9 +751,9 @@ img {
   transition: transform var(--transition-slow);
 }
 
-.product-card:hover .product-image img {
+/* .product-card:hover .product-image img {
   transform: scale(1.05);
-}
+} */
 
 .product-info {
   padding: var(--space-md);
