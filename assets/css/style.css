@@ -1475,8 +1475,18 @@ img {
   }
   
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     gap: var(--space-sm);
+  }
+
+  .product-card {
+    flex-direction: row;
+  }
+
+  .product-image {
+    width: 38%;
+    min-width: 120px;
+    aspect-ratio: 1 / 1;
   }
   
   .product-info {
