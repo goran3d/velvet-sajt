@@ -91,20 +91,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display);
-  font-weight: 400;
   line-height: 1.2;
   color: var(--black);
 }
 
 @media (max-width: 768px) {
-  h1, h2, h3, h4, h5, h6,
-  .section-title,
-  .product-name,
-  .materials-title,
-  .materials-heading,
-  .faq-question h3 {
-    font-weight: 600;
-  }
+  
 }
 
 h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
@@ -620,7 +612,6 @@ img {
   transform: translateY(30px);
   animation: fadeInUp 1s ease forwards;
   animation-delay: 0.3s;
-  font-weight: 600;
   letter-spacing: 0.02em;
 }
 
