@@ -748,11 +748,6 @@ img {
   gap: var(--space-lg);
 }
 
-.product-card-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
 .product-card {
   background: var(--white);
   border-radius: 8px;
@@ -761,7 +756,6 @@ img {
   transition: transform var(--transition-base), box-shadow var(--transition-base);
   display: flex;
   flex-direction: row;
-  flex: 1;
 }
 
 /* .product-card:hover {
@@ -1377,14 +1371,14 @@ img {
 }
 
 /* Staggered animation for grid items */
-.product-card-wrapper.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
-.product-card-wrapper.animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
-.product-card-wrapper.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
-.product-card-wrapper.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
-.product-card-wrapper.animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
-.product-card-wrapper.animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
-.product-card-wrapper.animate-on-scroll:nth-child(7) { transition-delay: 0.6s; }
-.product-card-wrapper.animate-on-scroll:nth-child(8) { transition-delay: 0.7s; }
+.product-card.animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+.product-card.animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+.product-card.animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+.product-card.animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+.product-card.animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
+.product-card.animate-on-scroll:nth-child(6) { transition-delay: 0.5s; }
+.product-card.animate-on-scroll:nth-child(7) { transition-delay: 0.6s; }
+.product-card.animate-on-scroll:nth-child(8) { transition-delay: 0.7s; }
 
 /* ============================================
    PAGE TRANSITIONS
@@ -1485,26 +1479,45 @@ img {
     gap: var(--space-sm);
   }
 
+  /* CSS grid trick: product-info becomes display:contents so h3 and p
+     participate directly in the card's grid — title spans full width above
+     the image+description row, without touching the HTML structure */
   .product-card {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 32% 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+      "title title"
+      "image info";
   }
 
   .product-image {
-    width: 38%;
-    min-width: 120px;
-    aspect-ratio: 1 / 1;
+    grid-area: image;
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
   }
-  
+
   .product-info {
-    padding: var(--space-sm);
+    display: contents;
   }
-  
+
   .product-name {
-    font-size: 1rem;
+    grid-area: title;
+    font-size: 0.95rem;
+    padding: 0.4rem var(--space-sm);
+    margin-bottom: 0;
+    border-bottom: 1px solid rgba(156, 158, 132, 0.3);
+    background: var(--white);
+    align-self: center;
   }
-  
+
   .product-description {
-    font-size: 0.85rem;
+    grid-area: info;
+    font-size: 0.82rem;
+    padding: var(--space-xs) var(--space-sm);
+    margin-bottom: 0;
+    align-self: center;
   }
   
   .featured-grid {
