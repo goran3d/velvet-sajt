@@ -1425,6 +1425,13 @@ img {
     font-weight: 500;
   }
   
+  .section-title,
+  .product-name,
+  .materials-title,
+  .materials-heading {
+    font-weight: 500;
+  }
+  
   .hamburger {
     display: flex;
   }
