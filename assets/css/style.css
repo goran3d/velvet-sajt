@@ -96,6 +96,17 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--black);
 }
 
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6,
+  .section-title,
+  .product-name,
+  .materials-title,
+  .materials-heading,
+  .faq-question h3 {
+    font-weight: 600;
+  }
+}
+
 h1 { font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem); }
 h2 { font-size: clamp(2rem, 3vw + 0.5rem, 3.5rem); }
 h3 { font-size: clamp(1.5rem, 2vw + 0.5rem, 2.5rem); }
@@ -1417,21 +1428,6 @@ img {
 
 /* Mobile */
 @media (max-width: 768px) {
-  .hero-title {
-    font-weight: 600;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 500;
-  }
-  
-  .section-title,
-  .product-name,
-  .materials-title,
-  .materials-heading {
-    font-weight: 500;
-  }
-  
   .hamburger {
     display: flex;
   }
