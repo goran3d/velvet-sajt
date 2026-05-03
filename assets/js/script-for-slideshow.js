@@ -1,21 +1,21 @@
 const photos = [
-    '../assets/img/roko-futer-5.jpg',
-    '../assets/img/roko-futer-1.jpg',
-    '../assets/img/roko-futer-2.jpg',
-    '../assets/img/roko-futer-4.jpg',
-    '../assets/img/roko-futer-6.jpg',
-    '../assets/img/roko-futer-9.jpg',
-    '../assets/img/roko-futer-10.jpg',
-    '../assets/img/roko-futer-12.jpg',
-    '../assets/img/roko-futer-14.jpg',
-    '../assets/img/roko-futer-18.jpg',
-    '../assets/img/roko-futer-13.jpg',
-    '../assets/img/roko-futer-8.jpg',
-    '../assets/img/singl-pamuk.jpg',
-    '../assets/img/singl-3.jpg',
-    '../assets/img/roko-futer-19-velvet-fabrics.jpg',
-    '../assets/img/singl-6.jpg',
-    '../assets/img/roko-futer-3-velvet-fabrics.jpg',
+    { src: '../assets/img/roko-futer-5.webp', alt: 'Roko futer u bež i roze boji' },
+    { src: '../assets/img/roko-futer-1.webp', alt: 'Roko futer mint, kajsija,bež i svetlo plava' },
+    { src: '../assets/img/roko-futer-2.webp', alt: 'Roko futer paleta boja' },
+    { src: '../assets/img/roko-futer-4.webp', alt: 'Roko futer oker, braon nijanse' },
+    { src: '../assets/img/roko-futer-6.webp', alt: 'Roko futer oker, bež, braon' },
+    { src: '../assets/img/roko-futer-9.webp', alt: 'Roko futer svetlije nijanse' },
+    { src: '../assets/img/roko-futer-10.webp', alt: 'Roko futer svetlije nijanse zelena, plava, kajsija' },
+    { src: '../assets/img/roko-futer-12.webp', alt: 'Roko futer crvena, žuta, plava, ljubičasta' },
+    { src: '../assets/img/roko-futer-14.webp', alt: 'Roko futer lila, svetlo plava, bež, puder roze' },
+    { src: '../assets/img/roko-futer-18.webp', alt: 'Roko futer pastelne boje duksevi' },
+    { src: '../assets/img/roko-futer-13.webp', alt: 'Roko futer oker, braon, bela' },
+    { src: '../assets/img/roko-futer-8.webp', alt: 'Roko futer tamna krem' },
+    { src: '../assets/img/singl-pamuk.webp', alt: 'Singl pamuk svetle nijanse' },
+    { src: '../assets/img/singl-3.webp', alt: 'Singl pamuk svetlije nijanse' },
+    { src: '../assets/img/roko-futer-19-velvet-fabrics.webp', alt: 'Roko futer oker, braon, bež, bela, svetla krem' },
+    { src: '../assets/img/singl-6.webp', alt: 'Singl pamuk kolekcija različitih nijansi, tamnije i svetlije boje' },
+    { src: '../assets/img/roko-futer-3-velvet-fabrics.webp', alt: 'Roko futer čitava lepeza boja' },
 ];
 
 const mainImage = document.getElementById('mainImage');
@@ -31,13 +31,13 @@ function showImage(index, animate = true) {
     if (animate && !reducedMotion) {
         mainImage.classList.add('fade-out');
         setTimeout(() => {
-            mainImage.src = photos[index];
-            mainImage.alt = `Photo ${index + 1}`;
+            mainImage.src = photos[index].src;
+            mainImage.alt = photos[index].alt;
             mainImage.classList.remove('fade-out');
         }, 250);
     } else {
-        mainImage.src = photos[index];
-        mainImage.alt = `Photo ${index + 1}`;
+        mainImage.src = photos[index].src;
+        mainImage.alt = photos[index].alt;
     }
 
     updateActiveThumbnail(index);
@@ -91,8 +91,8 @@ function generateThumbnails() {
     photos.forEach((photo, index) => {
         const thumb = document.createElement('img');
         thumb.className = 'thumbnail';
-        thumb.src = photo;
-        thumb.alt = `Thumbnail ${index + 1}`;
+        thumb.src = photo.src;
+        thumb.alt = photo.alt;
         thumb.dataset.index = index;
 
         thumb.addEventListener('click', () => {
@@ -120,8 +120,8 @@ function resetInterval() {
 
 function init() {
     if (photos.length > 0 && mainImage && thumbnailContainer) {
-        mainImage.src = photos[0];
-        mainImage.alt = 'Photo 1';
+        mainImage.src = photos[0].src;
+        mainImage.alt = photos[0].alt;
 
         generateThumbnails();
         updateActiveThumbnail(0);
