@@ -69,19 +69,18 @@ function initNavigation() {
   }
   
   // Set active nav link based on current page
-  const pathSegments = window.location.pathname.split('/').filter(Boolean);
-  const currentPage = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : 'index.html';
+  const currentPath = window.location.pathname;
   const navLinks = document.querySelectorAll('.nav-link');
   
+  // Helper to normalize paths (removes 'index.html' and trailing slashes)
+  const normalize = (p) => p.replace(/index\.html$/, "").replace(/\/$/, "") || "/";
+
   navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    // Handle subdirectory structure
-    if (href === currentPage || 
-        (currentPage === '' && href === 'index.html') ||
-        (currentPage === 'index.html' && href === 'index.html') ||
-        (currentPage === 'index.html' && href === '../index.html') ||
-        (pathSegments.length === 1 && href === '../index.html')) {
+    // pathname is automatically resolved to an absolute path by the browser
+    if (normalize(currentPath) === normalize(link.pathname)) {
       link.classList.add('active');
+    } else {
+      link.classList.remove('active');
     }
   });
 }
