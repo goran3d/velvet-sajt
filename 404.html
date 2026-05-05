@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Stranica nije pronađena | Velvet Fabrics</title>
+
+  <!-- Meta tags SEO -->
+  <meta name="description" content="Stranica koju tražite nije pronađena. Vratite se na početnu stranu Velvet Fabrics.">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/img/V-logo-48px.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    .error-page {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .error-container {
+      max-width: 600px;
+    }
+
+    .error-code {
+      font-family: var(--font-logo);
+      font-size: clamp(5rem, 15vw, 10rem);
+      color: var(--olive-leaf);
+      line-height: 1;
+      margin-bottom: var(--space-sm);
+      position: relative;
+      display: inline-block;
+    }
+
+    .error-code::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 4'%3E%3Cpath d='M0,2 Q5,0 10,2 T20,2' stroke='%23B0D63F' fill='none' stroke-width='2'/%3E%3C/svg%3E") repeat-x;
+      background-size: 30px 10px;
+    }
+
+    .error-title {
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      margin-bottom: var(--space-md);
+    }
+
+    .error-message {
+      color: var(--dry-sage-2);
+      margin-bottom: var(--space-xl);
+      font-size: 1.1rem;
+    }
+
+    .error-actions {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .fabric-icon {
+      font-size: 3rem;
+      color: var(--walnut);
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar compact" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="logo">
+        <picture>
+          <source srcset="assets/img/V-logo-transparent.webp" type="image/webp">
+          <img src="assets/img/V-logo-transparent.png" alt="Velvet Fabrics logo" class="logo-icon">
+        </picture> Velvet Fabrics
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Početna</a></li>
+        <li><a href="proizvodi/" class="nav-link">Proizvodi</a></li>
+        <li><a href="o-nama/" class="nav-link">O nama</a></li>
+        <li><a href="kontakt/" class="nav-link">Kontakt</a></li>
+      </ul>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Početna</a></li>
+      <li><a href="proizvodi/" class="nav-link">Proizvodi</a></li>
+      <li><a href="o-nama/" class="nav-link">O nama</a></li>
+      <li><a href="kontakt/" class="nav-link">Kontakt</a></li>
+    </ul>
+  </div>
+  <div class="menu-overlay" aria-hidden="true"></div>
+
+  <!-- Main Content -->
+  <main class="error-page" id="main">
+    <div class="error-container animate-on-scroll">
+      <span class="fabric-icon"><i class="fas fa-scissors"></i></span>
+      <h1 class="error-code">404</h1>
+      <h2 class="error-title">Ups! Izgubili smo nit.</h2>
+      <p class="error-message">Stranica koju tražite ne postoji ili je pomerena. Možda možemo da počnemo ispočetka?</p>
+      
+      <div class="error-actions">
+        <a href="index.html" class="btn btn-textile">Početna strana</a>
+        <a href="proizvodi/" class="btn btn-outline">Naši proizvodi</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Velvet Fabrics</h3>
+          <p>Premijum materijali za sve tipove Vaših kreacija. Tkan u simbiozi sa tradicijom i tehnologijom, da pruži savršenstvo.</p>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Linkovi</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Početna</a></li>
+            <li><a href="proizvodi/">Proizvodi</a></li>
+            <li><a href="o-nama/">O nama</a></li>
+            <li><a href="kontakt/">Kontakt</a></li>
+            <li><a href="https://www.instagram.com/fabrika_tekstila/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i> Instagram</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Kontakt</h4>
+          <ul class="footer-links">
+            <li><a href="#" class="protected-link" data-type="email" data-encoded="dmVsdmV0ZmFicmljcy5yc0BnbWFpbC5jb20">velvetfabrics.rs@gmail.com</a></li>
+            <li><a href="#" class="protected-link" data-type="phone" data-encoded="MDY1IDgzNSA4MzggMw==">065 835 838 3</a></li>
+            <li><a href="https://maps.google.com/?q=Nova+78+br+2+Novi+Sad+21000" target="_blank" rel="noopener">Nova 78, br 2<br>Novi Sad<br>21000</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 class="footer-title">Radno vreme</h4>
+          <ul class="footer-links">
+            <li>Ponedeljak - Petak:</li>
+            <li><i class="far fa-clock"></i> 8:00-16:00 h</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Velvet Fabrics. All rights reserved.</p>
+        <p>Stvoreno iz ljubavi prema tekstilu</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
